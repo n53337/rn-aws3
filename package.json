@@ -1,6 +1,6 @@
 {
   "name": "rn-aws3",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "react native library for uploading to AWS S3",
   "author": {
     "name": "Youssef Houffaine"

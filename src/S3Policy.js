@@ -6,7 +6,7 @@ const CryptoJS = require("crypto-js");
 const Buffer = global.Buffer || require("buffer").Buffer;
 const { dateToString } = require("./DateUtils");
 
-const TIME_OUT = 0 * (60 * 1000);
+const TIME_OUT = 10000 * (60 * 1000);
 const AWS_ACL = "public-read";
 const AWS_SERVICE_NAME = "s3";
 const AWS_REQUEST_POLICY_VERSION = "aws4_request";

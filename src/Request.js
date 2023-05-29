@@ -23,7 +23,15 @@ const buildResponseObject = (xhr) => {
   let headers = {};
   try {
     headers = parseHeaders(xhr)
-  } catch (e) {};
+  } catch (e) {
+
+  return {
+    status: xhr.status,
+    text: xhr.responseText,
+    headers: headers,
+    error: e
+  };
+  };
   return {
     status: xhr.status,
     text: xhr.responseText,

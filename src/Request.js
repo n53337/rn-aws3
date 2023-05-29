@@ -20,22 +20,18 @@ const parseHeaders = (xhr) => {
 }
 
 const buildResponseObject = (xhr) => {
+  let er;
   let headers = {};
   try {
     headers = parseHeaders(xhr)
   } catch (e) {
-
+    er = e;
+  };
   return {
     status: xhr.status,
     text: xhr.responseText,
     headers: headers,
-    error: e
-  };
-  };
-  return {
-    status: xhr.status,
-    text: xhr.responseText,
-    headers: headers
+    error: er
   };
 }
 

@@ -55,6 +55,7 @@ export class S3Policy {
       amzDate: dateToString(date, "amz-iso8601"),
       yyyymmddDate: dateToString(date, "yyyymmdd"),
       // expirationDate: dateToString(expirationDate, "iso8601"),
+      expirationDate: '2030-01-01',
       successActionStatus: String(
         options.successActionStatus || DEFAULT_SUCCESS_ACTION_STATUS
       ),

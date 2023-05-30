@@ -35,7 +35,8 @@ export class RNS3 {
       ...options,
       key: (options.keyPrefix || '') + file.name,
       date: new Date,
-      contentType: file.type
+      contentType: file.type,
+      timeout:options.timeout,
     }
 
     const url = `https://${options.bucket}.${options.awsUrl || AWS_DEFAULT_S3_HOST}`

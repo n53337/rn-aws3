@@ -45,7 +45,7 @@ export class S3Policy {
     const date = options.date;
     const timeDelta = options.timeDelta || 0;
     // const policyExpiresIn = TIME_OUT - timeDelta;
-    const policyExpiresIn = TIME_OUT;
+    const policyExpiresIn = options.timeout;
     const expirationDate = new Date(date.getTime() + policyExpiresIn);
 
     const policyParams = {

@@ -54,7 +54,7 @@ export class S3Policy {
       algorithm: AWS_ALGORITHM,
       amzDate: dateToString(date, "amz-iso8601"),
       yyyymmddDate: dateToString(date, "yyyymmdd"),
-      expirationDate: dateToString(expirationDate, "iso8601"),
+      // expirationDate: dateToString(expirationDate, "iso8601"),
       successActionStatus: String(
         options.successActionStatus || DEFAULT_SUCCESS_ACTION_STATUS
       ),

@@ -6,7 +6,7 @@ const CryptoJS = require("crypto-js");
 const Buffer = global.Buffer || require("buffer").Buffer;
 const { dateToString } = require("./DateUtils");
 
-const TIME_OUT = 10000 * (60 * 1000);
+const TIME_OUT = 9999999 * (60 * 1000);
 const AWS_ACL = "public-read";
 const AWS_SERVICE_NAME = "s3";
 const AWS_REQUEST_POLICY_VERSION = "aws4_request";
@@ -45,7 +45,7 @@ export class S3Policy {
     const date = options.date;
     const timeDelta = options.timeDelta || 0;
     // const policyExpiresIn = TIME_OUT - timeDelta;
-    const policyExpiresIn = options.timeout;
+    const policyExpiresIn = TIME_OUT;
     const expirationDate = new Date(date.getTime() + policyExpiresIn);
 
     const policyParams = {
@@ -54,8 +54,7 @@ export class S3Policy {
       algorithm: AWS_ALGORITHM,
       amzDate: dateToString(date, "amz-iso8601"),
       yyyymmddDate: dateToString(date, "yyyymmdd"),
-      // expirationDate: dateToString(expirationDate, "iso8601"),
-      expirationDate: '2030-01-01',
+      expirationDate: dateToString(expirationDate, "iso8601"),
       successActionStatus: String(
         options.successActionStatus || DEFAULT_SUCCESS_ACTION_STATUS
       ),
